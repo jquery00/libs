@@ -1,0 +1,190 @@
+<html>
+<head>
+  <title>Employee Profile</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+
+<div class="container">
+  <h2>Punith Rajkumar</h2>
+
+  <img src="punith.jpg" class="rounded-circle" alt="Cinque Terre" width="304" height="236"> 
+</div>
+
+<div class="container">  
+  <a href="#personal" class="btn btn-primary" data-toggle="collapse">Personal Details</a>
+<div id="personal" class="collapse">
+  <h2>Personal Details</h2>
+  <table class="table">
+      <tr> <td>Employee ID</td>  <td>20102030</td> </tr>
+      <tr> <td>Name</td>  <td>Punith Raj Kumar</td> </tr>
+      <tr> <td>Date of Birth </td>  <td>17-Mar-1975 </td> </tr>
+      <tr> <td>Gender</td>  <td>Male</td> </tr>
+      <tr> <td>Father Name </td>  <td>Dr. Raj Kumar</td> </tr>
+      <tr> <td>Mother Name </td>  <td>Parvathamma Rajkumar</td> </tr>
+  </table>
+</div>
+
+</div>
+
+<p> </p>
+
+<div class="container">
+  
+<a href="#awards" class="btn btn-primary" data-toggle="collapse">Awards</a>
+<div id="awards" class="collapse">
+  <h2>Awards</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Award Name</th>
+        <th>Awarded by</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Karnataka Ratna,2022</td>
+        <td>Goverment of Karnataka</td>
+      </tr>
+      <tr>
+        <td>Honorary Doctorate </td>
+        <td>University of Mysore </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<p> </p>
+
+<div class="container">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="updatepersonal.html">Update Personal Details</a></li>
+    <li class="page-item"><a class="page-link" href="#">Qualifications</a></li>
+    <li class="page-item"><a class="page-link" href="#">Awards</a></li>
+    <li class="page-item"><a class="page-link" href="#">Paper Published</a></li>   
+  </ul>
+</div>
+
+</body>
+</html>
+
+
+====================================================================================
+
+employeprofile.html
+=======================================================================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Employee Profile</title>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+
+
+<form action="/updateprofile" method="post">
+    Personal Details
+    Empid: <input type="text" name="txtempid">
+
+    Name : <input type="text" name="txtname"><br>
+    Mobile Number : <input type="text" name="txtmobileno"><br>'
+    email-id : <input type="text" name="txtsem"><br>
+
+    Qualification: <input type="text" name="txtempqualification"><br>
+    Awards - National: <input type="text" name="txtawards1"><br>
+    Awards - International : <input type="text" name="txtawards2"><br>
+    Paper - Publication- National : <input type="text" name="txtpaper">
+    Paper - Publication- Inter National : <input type="text" name="txtpaper">
+    <input type="submit" value="Update">');
+
+
+<div class="container">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="personal.html">Personal Details</a></li>
+    <li class="page-item"><a class="page-link" href="#">Qualifications</a></li>
+    <li class="page-item"><a class="page-link" href="#">Awards</a></li>
+    <li class="page-item"><a class="page-link" href="#">Paper Published</a></li>   
+  </ul>
+</div>
+
+</body>
+</html>
+
+
+====================================================================================
+updatepersonal.html
+====================================================================================
+<html>
+<head>
+  <title>Employee Profile</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+
+
+
+<div class="container">
+  <h2>Personal Details</h2>
+  <form >
+    <div class="form-group">
+      <label>Employee Id:</label>
+      <input type="text" class="form-control" id="email" name="txtempid" value="20102030">
+    </div>
+
+   <div class="form-group">
+      <label>Name :</label>
+      <input type="text" class="form-control" id="email" name="txtname" value="Punith Raj Kumar">
+    </div>
+
+    <div class="form-group">
+      <label> Gender:</label>
+	<div class="dropdown">
+	    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> Male </button>
+	    <div class="dropdown-menu">
+		      <a class="dropdown-item" href="#">Male</a>
+		      <a class="dropdown-item" href="#">Female</a>		
+	    </div>
+	</div>
+    </div>
+
+    <div class="form-group">
+      <label> Date of Birth:</label>
+      <input  type="date" class="form-control" id="email" name="txtdob" value="1975-03-17">
+    </div>
+
+    <div class="form-group">
+      <label>Father Name:</label>
+      <input type="text" class="form-control" id="email" name="txtfathername" value="Dr. Raj Kumar">
+    </div>
+
+    <div class="form-group">
+      <label>Mother Name:</label>
+      <input type="text" class="form-control" id="email" name="txtmothername" value="Parvathamma Rajkumar">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+
+
+<div class="container">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="default.html">Previous</a></li>
+  </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+
+namespace webapisample.Controllers
+{
+    public class OddNumbersController : ApiController
+    {
+        public IEnumerable<int> Get(int n)
+        {
+            List<int> oddNumbers = new List<int>();
+            for (int i = 1; i <= n; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    oddNumbers.Add(i);
+                }
+            }
+            return oddNumbers;
+        }
+    }
+}

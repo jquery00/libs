@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CMR</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+  <script>
+    $(document).ready(function() {
+      $(".program-details").hide();
+      $(".program-name").click(function() {
+        $(this).next(".program-details").slideToggle();
+      });
+      $(".faculty-name").click(function() {
+        $('#faculty, #faculty2').dialog({
+          modal: true,
+          title: 'Profile',
+          width: 400,
+          height: 400,
+          buttons: {
+            'Close': function() {
+              $(this).dialog('close');
+            }
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>CMR University College</h1>
+  <h2>Different schools under CMR University</h2>
+  <ul>
+    <li>
+      <h3 class="program-name">School of Science Studies</h3>
+      <div class="program-details">
+        <p>Courses offered:</p>
+        <ul>
+          <li>Course: MCA - Master of Computer Application</li>
+          <li>Duration: 2 years</li>
+          <li>Requirements: minimum 60% above in undergraduate</li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <h3 class="program-name">School of Business Administration</h3>
+      <div class="program-details">
+        <p>Courses offered:</p>
+        <ul>
+          <li>Course: MBA - Master of Business Administration</li>
+          <li>Duration: 2 years</li>
+          <li>Requirements: minimum 60% above in undergraduate</li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+  <h1>SOSS Faculty Details</h1>
+  <ul>
+    <li><h3 class="faculty-name">Prof. Rama Y</h3></li>
+    <li><h3 class="faculty-name">Prof. Sita</h3></li>
+  </ul>
+  <div id="faculty" style="display:none;">
+    <img src="E:\awtmadhavi\profile.jpg" height="100" width="100" alt="Profile picture">
+    <h2>Prof. Rama</h2>
+    <p>MCA - SOSS</p>
+    <ul>
+      <li><strong>Email:</strong> rama@cmr.edu.in</li>
+      <li><strong>Phone:</strong> 9756432346</li>
+      <li><strong>Location:</strong> Bangalore, Karnataka</li>
+    </ul>
+    
+  </div>
+  <div id="faculty2" style="display:none;">
+    <img src="E:\awtmadhavi\profile.jpg" height="100" width="100" alt="Profile picture">
+    <h2>Prof. Sita</h2>
+    <p>MCA - SOSSS</p>
+    <ul>
+      <li><strong>Email:</strong> sita@cmr.edu.in</li>
+      <li><strong>Phone:</strong> 9837547840</li>
+      <li><strong>Location:</strong> Bangalore, Karnataka</li>
+    </ul>
+  </div>
+</body>
+</html>

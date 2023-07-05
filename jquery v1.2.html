@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notepad</title>
+  <style>
+    body {
+      background-color: red;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#btn").click(function() {
+        const title = $("#title").val();
+        const content = $("#mainarea").val();
+        const file = new Blob([content], { type: "text/plain" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(file);
+        link.download = title + ".txt";
+        link.click();
+        URL.revokeObjectURL(link.href);
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <label for="title">Title:</label>
+    <input id="title" type="text" placeholder="Give title" /><br><br>
+    <textarea id="mainarea" cols="60" rows="15"></textarea><br>
+    <button id="btn">Download</button>
+  </div>
+</body>
+</html>

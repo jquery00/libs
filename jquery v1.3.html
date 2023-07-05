@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Table Creation</title>
+  <style>
+    table { border-collapse: collapse; }
+    th, td { border: 1px solid black; padding: 8px; }
+    th { background-color: #f2f2f2; }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    var jsonData = {
+      "Fruits": ["Apple", "Banana", "Orange"],
+      "Colors": ["Red", "Green", "Blue"],
+      "Animals": ["Lion", "Elephant", "Tiger"]
+    };
+
+    $(document).ready(function() {
+      $('#dropdown').change(function() {
+        var selectedData = jsonData[$(this).val()];
+        var table = $('<table>').append($('<tr>').append($('<th>').text($(this).val())));
+        $.each(selectedData, function(index, value) { table.append($('<tr>').append($('<td>').text(value))); });
+        $('#table-container').empty().append(table);
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Dynamic Table Creation</h1>
+  <label for="dropdown">Select a category:</label>
+  <select id="dropdown">
+    <option value="Fruits">Fruits</option>
+    <option value="Colors">Colors</option>
+    <option value="Animals">Animals</option>
+  </select>
+  <div id="table-container"></div>
+</body>
+</html>
